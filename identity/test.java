@@ -9,11 +9,12 @@ class test
     
     public static void main(String args[]) throws Exception
     {
+    while(true)
+    {
         System.out.println("请输入身份证号码");
         Scanner reader = new Scanner(System.in);
         String num = reader.nextLine();
         System.out.println("输入的身份证号码为："+num);
-
 
 //        FileReader temp  = new FileReader("sfz.txt");
         InputStreamReader temp = new InputStreamReader(new FileInputStream("sfz.txt"));
@@ -26,6 +27,19 @@ class test
         String s_rq = null ,  s_n = null , s_y = null ,s_r = null;
         int i_n = 0, i_y  = 0 ,i_r = 0 ;
         boolean isOld = false;
+        if(!num.matches("^(\\d{6})(18|19|20)?(\\d{2})([01]\\d)([0123]\\d)(\\d{3})(\\d|X|x)?$") && !num.matches("^[1-9]\\d{7}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}$"))
+        {
+            System.out.println("输入错误,请核对后输入");
+/*
+            System.out.println("输入x退出");
+            char choose = 'a';
+            choose = (char)System.in.read();
+            if(choose == 'x' || choose == 'X')
+                System.exit(0);
+            else
+*/
+               return;
+        }
         if(num.length() == 18 || num.length() == 15)
         {
             if(num.length()==18)
@@ -65,7 +79,7 @@ class test
             }
             else
             {
-                s_gender = num.substring(17);
+                s_gender = num.substring(16,17);
                 i_gender = Integer.parseInt(s_gender);
                 if(i_gender%2==1)
                     System.out.println("男");
@@ -74,7 +88,7 @@ class test
             }
             
                 
-                
+/*                
             if(i_n < 1890 && !isOld || i_n >2017  && !isOld || i_y < 1 || i_y > 12 || i_r < 1 || i_r > 31)
             {
                 System.out.println("输入的身份证号码出生日期异常");
@@ -82,11 +96,14 @@ class test
             }
             else
             {
+*/
                 System.out.println("出生日期："+s_n+"年"+s_y+"月"+s_r+"日");
-            }
+
+//            }
 //            System.out.println(s_n);
 //            System.out.println("身份证位数只能是15或18位");
         }
+/*
         else
         {
             System.out.println("身份证位数只能是15或18位");
@@ -94,7 +111,7 @@ class test
         }
         
 
-
+*/
 
         for( int j = 0 ; j < 3466 ; j++)
         {
@@ -125,7 +142,14 @@ class test
         else
         {
             System.out.println("没有这个身份证号码所对应的地址");
-            return ;
+/*
+            System.out.println("输入x退出");
+            char choose = 'a';
+            choose = (char)System.in.read();
+            if(choose == 'x' || choose == 'X')
+            System.exit(0);
+*/
+            return;
         }
         
         if(num.length() == 15)
@@ -171,5 +195,14 @@ class test
         System.out.println(s_xnum.substring(0,17)+s_jym[jym]);
         }
 
+        f1.close();
+/*
+        System.out.println("输入x退出");
+        char choose = 'a';
+        choose = (char)System.in.read();
+        if(choose == 'x' || choose == 'X')
+            System.exit(0);
+*/
+    }
     }
 }
