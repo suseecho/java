@@ -9,8 +9,8 @@ class test
     
     public static void main(String args[]) throws Exception
     {
-    while(true)
-    {
+//    while(true)
+//    {
         System.out.println("请输入身份证号码");
         Scanner reader = new Scanner(System.in);
         String num = reader.nextLine();
@@ -49,9 +49,11 @@ class test
                 s_n = s_rq.substring(0,4);
                 s_y = s_rq.substring(4,6);
                 s_r = s_rq.substring(6,8);
+/*
                 i_n = Integer.parseInt(s_n);
                 i_y = Integer.parseInt(s_y);
                 i_r = Integer.parseInt(s_r);
+*/
             }
             if(num.length()==15)
             {
@@ -204,5 +206,5 @@ class test
             System.exit(0);
 */
     }
-    }
 }
+
