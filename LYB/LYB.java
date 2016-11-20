@@ -15,10 +15,11 @@ class Demo
         user = reader.nextLine();
         System.out.println("
 */
-
+        myFrame demo = new myFrame();
+        demo.init();
 
         String driver = "com.mysql.jdbc.Driver";
-        String url = "jdbc:mysql://127.0.0.1:3306/echo";//localhost无法连接  原因未知
+        String url = "jdbc:mysql://127.0.0.1:3306/echo?useSSL=false";//localhost无法连接  原因未知
         String user = "echo";
         String passwd = "icanmakeit";
         try
@@ -44,12 +45,13 @@ class Demo
         }
 
         Statement s = conn.createStatement();
-        s.executeUpdate(
-            "create table test");
+            
+/*
+        s.executeUpdate("create table if not exist test( time TIMESTAMP, face VARCHAR(20), content VARCHAR(200))");
+                
+*/
         s.close();
         conn.close();
 
-        myFrame demo = new myFrame();
-        demo.init();
     }
 }
