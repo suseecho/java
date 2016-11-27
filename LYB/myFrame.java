@@ -9,12 +9,11 @@ class myFrame extends JFrame
     {
         JFrame f = new JFrame("留言板程序");
         f.setSize(500,450);
-//        f.setResizable(false);
+        f.setResizable(false);
 //        this.setSize(600,500);
         Container c = f.getContentPane();
         GridBagLayout layout = new GridBagLayout();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setVisible(true);
         c.setLayout(layout);        //这一行非常重要!!!
 
 
@@ -202,5 +201,6 @@ System.out.println(s_rec);
         });
                 
         c.add(submit);
+        f.setVisible(true);
     }
 }
