@@ -20,8 +20,8 @@ class Demo
 
         String driver = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://127.0.0.1:3306/echo?useUnicode=true&characterEncoding=utf-8&useSSL=false";//localhost无法连接  原因未知
-        String user = "echo";
-        String passwd = "icanmakeit";
+        String user = "*********";
+        String passwd = "***********";
         try
         {
             Class.forName(driver);
