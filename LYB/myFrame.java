@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.awt.*;
 class myFrame extends JFrame
 {
-    public void init()
+    public void init(String url,String user , String passwd)
     {
         JFrame f = new JFrame("留言板程序");
         f.setSize(500,450);
@@ -34,9 +34,6 @@ class myFrame extends JFrame
        
 		action act = new action();
         java.util.List<record> r = new ArrayList<record>();
-		String url = "jdbc:mysql://127.0.0.1:3306/echo?useSSL=false";//localhost无法连接  原因未知
-        String user = "echo";
-        String passwd = "icanmakeit";
         String s_rec = "";
         TextArea textarea1 = new TextArea("留言内容:",20,60);
 		r = act.showRecord(url,user,passwd);
@@ -66,16 +63,18 @@ System.out.println(s_rec);
             public void actionPerformed(ActionEvent e)
             {
                textarea1.setText("留言内容:");
+/*
                try
                 {
                 conn =(Connection) DriverManager.getConnection(url,user,passwd);
                 s = conn.createStatement();
-                s.executeUpdate("delete from test");
+                s.executeUpdate("delete from ltjl");
                 }
                 catch(SQLException a)
                 {
                     a.printStackTrace();
                 }
+*/
             }
         });
         s.gridx = 4;

@@ -15,13 +15,15 @@ class Demo
         user = reader.nextLine();
         System.out.println("
 */
-        myFrame demo = new myFrame();
-        demo.init();
 
         String driver = "com.mysql.jdbc.Driver";
-        String url = "jdbc:mysql://127.0.0.1:3306/echo?useUnicode=true&characterEncoding=utf-8&useSSL=false";//localhost无法连接  原因未知
-        String user = "*********";
-        String passwd = "***********";
+        String url = "jdbc:mysql://119.29.168.136:3306/lts?useUnicode=true&characterEncoding=utf-8&useSSL=false";//localhost无法连接  原因未知
+        String user = "qwer";
+        String passwd = "test";
+
+
+        myFrame demo = new myFrame();
+        demo.init(url,user,passwd);
         try
         {
             Class.forName(driver);

@@ -26,7 +26,7 @@ class action
 
             conn =(Connection) DriverManager.getConnection(url,user,passwd);
 			s = conn.createStatement();
-			rs = s.executeQuery("select * from test");
+			rs = s.executeQuery("select * from ltjl");
 //            System.out.println("连接数据库成功");
 			while(rs.next())
 			{
@@ -61,7 +61,7 @@ System.out.println(rs.getString("content"));
         try
         {
             conn = (Connection) DriverManager.getConnection(url,user,passwd);
-            String sql = "insert into test(time,face,content) values(?,?,?)";
+            String sql = "insert into ltjl(time,face,content) values(?,?,?)";
             s = conn.prepareStatement(sql);
             s.setString(1,null);
             s.setString(2,face);
